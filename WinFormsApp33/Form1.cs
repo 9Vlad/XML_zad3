@@ -22,7 +22,7 @@ namespace WinFormsApp33
         {
             if (textBox1.Text == " ")
             {
-                MessageBox.Show("Заполните все поля.", "Ошибка.");
+                MessageBox.Show("Г‡Г ГЇГ®Г«Г­ГЁГІГҐ ГўГ±ГҐ ГЇГ®Г«Гї.", "ГЋГёГЁГЎГЄГ .");
             }
             else
             {
@@ -43,10 +43,11 @@ namespace WinFormsApp33
                 dataGridView1.Rows[n].Cells[0].Value = textBox1.Text;
                 dataGridView1.Rows[n].Cells[1].Value = numericUpDown1.Value;
                 dataGridView1.Rows[n].Cells[2].Value = comboBox1.Text;
+                dataGridView1.Rows[n].Cells[3].Value = numericUpDown2.Value;
             }
             else
             {
-                MessageBox.Show("Выберите строку для редактирования.", "Ошибка.");
+                MessageBox.Show("Г‚Г»ГЎГҐГ°ГЁГІГҐ Г±ГІГ°Г®ГЄГі Г¤Г«Гї Г°ГҐГ¤Г ГЄГІГЁГ°Г®ГўГ Г­ГЁГї.", "ГЋГёГЁГЎГЄГ .");
             }
         }
 
@@ -58,7 +59,7 @@ namespace WinFormsApp33
             }
             else
             {
-                MessageBox.Show("Выберите строку для удаления.", "Ошибка.");
+                MessageBox.Show("Г‚Г»ГЎГҐГ°ГЁГІГҐ Г±ГІГ°Г®ГЄГі Г¤Г«Гї ГіГ¤Г Г«ГҐГ­ГЁГї.", "ГЋГёГЁГЎГЄГ .");
             }
         }
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
@@ -90,12 +91,12 @@ namespace WinFormsApp33
                     row["Experience"] = r.Cells[3].Value;
                     ds.Tables["Employee"].Rows.Add(row);
                     ds.WriteXml("C:\\Important\\XML.xml");
-                    MessageBox.Show("XML файл успешно сохранён.", "Выполнено.");
+                    MessageBox.Show("XML ГґГ Г©Г« ГіГ±ГЇГҐГёГ­Г® Г±Г®ГµГ°Г Г­ВёГ­.", "Г‚Г»ГЇГ®Г«Г­ГҐГ­Г®.");
                 }
             }
             catch
             {
-                MessageBox.Show("Невозможно сохранить XML файл.", "Ошибка.");
+                MessageBox.Show("ГЌГҐГўГ®Г§Г¬Г®Г¦Г­Г® Г±Г®ГµГ°Г Г­ГЁГІГј XML ГґГ Г©Г«.", "ГЋГёГЁГЎГЄГ .");
             }
         }
 
@@ -107,7 +108,7 @@ namespace WinFormsApp33
             }
             else
             {
-                MessageBox.Show("Таблица пустая.", "Ошибка.");
+                MessageBox.Show("Г’Г ГЎГ«ГЁГ¶Г  ГЇГіГ±ГІГ Гї.", "ГЋГёГЁГЎГЄГ .");
             }
         }
 
@@ -115,7 +116,7 @@ namespace WinFormsApp33
         {
             if (dataGridView1.Rows.Count < 0)
             {
-                MessageBox.Show("Очистите поле перед загрузкой нового файла.", "Ошибка.");
+                MessageBox.Show("ГЋГ·ГЁГ±ГІГЁГІГҐ ГЇГ®Г«ГҐ ГЇГҐГ°ГҐГ¤ Г§Г ГЈГ°ГіГ§ГЄГ®Г© Г­Г®ГўГ®ГЈГ® ГґГ Г©Г«Г .", "ГЋГёГЁГЎГЄГ .");
             }
             else
             {
@@ -130,11 +131,12 @@ namespace WinFormsApp33
                         dataGridView1.Rows[n].Cells[0].Value = item["Name"];
                         dataGridView1.Rows[n].Cells[1].Value = item["Age"];
                         dataGridView1.Rows[n].Cells[2].Value = item["Programmer"];
+                        dataGridView1.Rows[n].Cells[3].Value = item["Experience"];
                     }
                 }
                 else
                 {
-                    MessageBox.Show("XML файл не найден.", "Ошибка.");
+                    MessageBox.Show("XML ГґГ Г©Г« Г­ГҐ Г­Г Г©Г¤ГҐГ­.", "ГЋГёГЁГЎГЄГ .");
                 }
             }
         }
